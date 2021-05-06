@@ -1,13 +1,12 @@
 # Peach APP
 
 ## Description
-
-Peach is a web app developed using Python Flask, Postgressql and SQLAlchemy The app allows a user to create pitches for different categories, as well as comment and vote on them.The application incorporates an authentication system, ORM using SQLAlchemy, migrations and password hashing.
+Blogg is a web app developed using Python Flask, Postgressql and SQLAlchemy The app allows a user to create blogs for different categories, as well as comment and vote on them.The application incorporates an authentication system, ORM using SQLAlchemy, migrations and password hashing.
 
 ## Author
 
 Josh Kimani
-(https://peach-app.herokuapp.com/)
+(https://gglob.herokuapp.com/)
 
 
 
