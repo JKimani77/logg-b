@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+<!-- displaying  Username-->
+
+    
+      <div style="align-self: center;" class="card">
+
+       
+        <h3 style="  font-size: 120px; font-family: -apple-system;text-align:center;color: darkolivegreen;
+         background-color: rgb(108, 143, 98);margin-top: 9px;margin-bottom: 50px;
+         margin-left: 400px; margin-right: 400px;"> {{current_user.username| capitalize}}     ~ Profile </h3>
+        
+        <br>
+        <button class="bg-light" style="align-items: center;align-self: center;
+        align-content: center;margin-left: 1000px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4)"><a style="font-size: 200%;" 
+            href="{{url_for('main.update_profile',uname=user.username)}}">Edit profile</a></button>
+        <br>
+        <br>
+        <button class="bg-light" style="align-items: center;align-self: center;
+        align-content: center;margin-left: 1000px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4)"><a style="font-size: 200%;" 
+            href="{{url_for('main.new')}}">Create New Blog</a></button>
+
+
+        <div style="background-color: rgb(108, 143, 98); width: 40rem;height: 20rem; 
+        border-style:double;border-width: 5px; border-color: rgb(108, 143, 98); margin-left: 200px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7)"  class="card-body">
+          <!--Displaying user bio-->
+       {% if user.bio %}
+       <p style="color: rgb(0, 0, 0); text-align: center; font-size: 120%;"> ~ {{user.bio}}</p>
+         {%else%}
+       <p style="color: rgb(0, 0, 0); text-align: center; font-size: 120%;" > {{user.username| capitalize}} has no bio </p>
+       {% endif %}
+
+       
+
+       </div>
+
+      </div>
+
+    
+
+
+
+
+
+
+<!--Display profile photo-->
+
+  <br>
+  <br>
+  <br>
+
+  <div class="card" style="background-color: rgb(108, 143, 98); width: 40rem;height: 20rem; 
+  border-style:double;border-width: 5px; border-color:rgb(108, 143, 98); margin-left: 200px; box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.7)">
+     
+        {% if user == current_user %}
+    <form  action="{{url_for('main.update_pic',uname=user.name)}}" method="post" enctype = "multipart/form-data">
+
+      <input type="file"  name="photo" class="form-control" required>
+      <input type="submit">
+    </form>
+    {%else%}
+    <p style="color: rgb(0, 0, 0); text-align: center; font-size: 120%;">Image goes here</p>
+      {% endif %}
+    
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  
+  <div class="card" style="background-color: rgb(108, 143, 98); width: 40rem;height: 20rem; 
+  border-style:double;border-width: 5px; border-color: rgb(108, 143, 98); margin-left: 200px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7)">
+  {% if user.profile_pic %}
+  <img src="" alt="" class="img-thumbnail">
+  {%else%}
+  <p style="color: rgb(0, 0, 0); text-align: center; font-size: 120%;">No profile picture</p>
+  {% endif %}
+  </div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+{% endblock %}

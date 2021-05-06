@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Blog App
+We have just seen you have signed up for our application and want to welcome you to the family. Create blogs and comment on all blogs.

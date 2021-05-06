@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold text-center text-muted">New Post.</h1>
+  </div>
+</div>
+<div class="container" style="margin-top: 40px;">
+  <div class="form-floating">
+    <main class="form-signin">
+      <div class="mb-3">
+        {{wtf.quick_form(form)}}
+      </div>
+    </main>
+</div>
+</div>
+
+<!-- Footer -->
+ <footer class="bg-light" style="margin-top: 80px;">
+    <div class="container py-5">
+      <div class="row py-4">
+        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0"><img src="{{url_for('static', filename='img/blog_logo.png')}}" style=" width: 250px; height:250px;"alt="" width="180" class="mb-3">
+         
+          <ul class="list-inline mt-4">
+            <li class="list-inline-item"><a href="#" target="_blank" title="twitter"><i class="fab fa-twitter" style="color: #717272; font-size: 20px;"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="facebook"><i class="fab fa-facebook-f" style="color: #848a89; font-size: 20px;"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="instagram"><i class="fab fa-instagram" style="color: #5a6160; font-size: 20px;"></i></a></li>
+            <li class="list-inline-item"><a href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest" style="color: #879190; font-size: 20px;"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Social</h6>
+          <ul class="list-unstyled mb-0">
+            <li class="mb-2"><a href="/" class="" style="color: #070707; text-decoration: none;">Home</a></li>
+            <li class="mb-2"><a href="{{url_for('main.new', uname=current_user.username)}}" class="" style="color: #3f4140; text-decoration: none;">New Blog</a></li>
+            <li class="mb-2"><a href="{{url_for('main.profile',uname=current_user.username)}}" class="" style="color: #606362; text-decoration: none;">Profile</a></li> 
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-lg-0">
+          <h6 class="text-uppercase font-weight-bold mb-4">Newsletter</h6>
+          <p class=" mb-4">Subscribe to our Newsletter.</p>
+        
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyrights -->
+    <div class="bg-light py-4">
+      <div class="container text-center">
+        <p class=" mb-0 py-2">© 2021 Blogg App.All Rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+{% endblock %}

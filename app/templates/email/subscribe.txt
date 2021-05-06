@@ -1,0 +1,5 @@
+Hello {{user.username}}
+  A new blog post has just been added to the app. Be first to read!
+
+  Regards,
+  J.Kimani
